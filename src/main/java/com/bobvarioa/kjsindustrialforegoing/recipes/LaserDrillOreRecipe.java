@@ -7,13 +7,15 @@ import dev.latvian.mods.kubejs.item.OutputItem;
 import dev.latvian.mods.kubejs.recipe.RecipeKey;
 import dev.latvian.mods.kubejs.recipe.component.ItemComponents;
 import dev.latvian.mods.kubejs.recipe.component.NumberComponent;
+import dev.latvian.mods.kubejs.recipe.component.RecipeComponentBuilder;
+import dev.latvian.mods.kubejs.recipe.component.RecipeComponentBuilderMap;
 import dev.latvian.mods.kubejs.recipe.schema.RecipeSchema;
 
 import java.util.Map;
 
 public interface LaserDrillOreRecipe {
     RecipeKey<OutputItem> OUTPUT = ItemComponents.OUTPUT.key("output");
-    RecipeKey<Map<String, Object>[]> RARITY = TitaniumComponents.RARITY.asArray().key("rarity");
+    RecipeKey<RecipeComponentBuilderMap[]> RARITY = TitaniumComponents.RARITY.asArray().key("rarity");
 
     RecipeKey<InputItem> CATALYST = ItemComponents.INPUT.key("catalyst");
 

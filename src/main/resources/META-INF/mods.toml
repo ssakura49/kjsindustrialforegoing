@@ -24,7 +24,7 @@ license = "All Rights Reserved"
 [[dependencies.kjsindustrialforegoing]]
     modId = "kubejs"
     mandatory = true
-    versionRange = "[1902.6.1-build.234,)"
+    versionRange = "[1902.6.1-build.282,)"
     ordering = "NONE"
     side = "BOTH"
 [[dependencies.kjsindustrialforegoing]]

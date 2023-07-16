@@ -4,16 +4,14 @@ import com.bobvarioa.kjsindustrialforegoing.TitaniumComponents;
 import dev.latvian.mods.kubejs.fluid.OutputFluid;
 import dev.latvian.mods.kubejs.item.InputItem;
 import dev.latvian.mods.kubejs.recipe.RecipeKey;
-import dev.latvian.mods.kubejs.recipe.component.ItemComponents;
-import dev.latvian.mods.kubejs.recipe.component.NumberComponent;
-import dev.latvian.mods.kubejs.recipe.component.StringComponent;
+import dev.latvian.mods.kubejs.recipe.component.*;
 import dev.latvian.mods.kubejs.recipe.schema.RecipeSchema;
 
 import java.util.Map;
 
 public interface LaserDrillFluidRecipe {
     RecipeKey<OutputFluid> OUTPUT = TitaniumComponents.OUTPUT_FLUID.key("output");
-    RecipeKey<Map<String, Object>[]> RARITY = TitaniumComponents.RARITY.asArray().key("rarity");
+    RecipeKey<RecipeComponentBuilderMap[]> RARITY = TitaniumComponents.RARITY.asArray().key("rarity");
 
     RecipeKey<InputItem> CATALYST = ItemComponents.INPUT.key("catalyst");
 

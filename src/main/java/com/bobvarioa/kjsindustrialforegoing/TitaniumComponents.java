@@ -43,7 +43,7 @@ public class TitaniumComponents {
         @Override
         public JsonElement write(RecipeJS recipe, InputFluid value) {
             var stack = ((FluidStackJS) value);
-            return stack.isEmpty() ? null : new JsonPrimitive(stack.getFluidStack().write(new CompoundTag()).toString());
+            return stack.kjs$isEmpty() ? null : new JsonPrimitive(stack.getFluidStack().write(new CompoundTag()).toString());
         }
 
         private InputFluid readString(RecipeJS recipe, String str) {
@@ -71,7 +71,7 @@ public class TitaniumComponents {
 
         @Override
         public String checkEmpty(RecipeKey<InputFluid> key, InputFluid value) {
-            if (value.isInputEmpty()) {
+            if (value.kjs$isEmpty()) {
                 return "Input fluid '" + key.name + "' can't be empty!";
             }
 
@@ -103,7 +103,7 @@ public class TitaniumComponents {
         @Override
         public JsonElement write(RecipeJS recipe, OutputFluid value) {
             var stack = ((FluidStackJS) value);
-            return stack.isEmpty() ? null : new JsonPrimitive(stack.getFluidStack().write(new CompoundTag()).toString());
+            return stack.kjs$isEmpty() ? null : new JsonPrimitive(stack.getFluidStack().write(new CompoundTag()).toString());
         }
 
         private OutputFluid readString(RecipeJS recipe, String str) {
@@ -130,7 +130,7 @@ public class TitaniumComponents {
 
         @Override
         public String checkEmpty(RecipeKey<OutputFluid> key, OutputFluid value) {
-            if (value.isOutputEmpty()) {
+            if (value.kjs$isEmpty()) {
                 return "Output fluid '" + key.name + "' can't be empty!";
             }
 
