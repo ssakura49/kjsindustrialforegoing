@@ -5,6 +5,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import dev.architectury.fluid.FluidStack;
 import dev.latvian.mods.kubejs.fluid.FluidStackJS;
 import dev.latvian.mods.kubejs.fluid.InputFluid;
 import dev.latvian.mods.kubejs.fluid.OutputFluid;
@@ -19,7 +20,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.TagParser;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.fluids.FluidStack;
 
 import java.util.Iterator;
 
@@ -48,7 +48,7 @@ public class TitaniumComponents {
 
         private InputFluid readString(RecipeJS recipe, String str) {
             try {
-                return recipe.readInputFluid(FluidStack.loadFluidStackFromNBT(TagParser.parseTag(str)));
+                return recipe.readInputFluid(FluidStack.read(TagParser.parseTag(str)));
             } catch (CommandSyntaxException e) {
                 throw new RuntimeException(e);
             }
@@ -108,7 +108,7 @@ public class TitaniumComponents {
 
         private OutputFluid readString(RecipeJS recipe, String str) {
             try {
-                return recipe.readOutputFluid(FluidStack.loadFluidStackFromNBT(TagParser.parseTag(str)));
+                return recipe.readOutputFluid(FluidStack.read(TagParser.parseTag(str)));
             } catch (CommandSyntaxException e) {
                 throw new RuntimeException(e);
             }

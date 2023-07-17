@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.Block;
 
 public interface FluidExtractorRecipe {
     RecipeKey<InputItem> INPUT = ItemComponents.INPUT.key("input");
-    RecipeKey<Block> RESULT = BlockComponent.OUTPUT.key("result");
+    RecipeKey<Block> RESULT = BlockComponent.OUTPUT.key("result").allowEmpty();
 
     RecipeKey<Float> BREAK_CHANCE = NumberComponent.FLOAT.key("breakChance");
 
